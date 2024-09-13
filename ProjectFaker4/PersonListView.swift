@@ -1,12 +1,19 @@
+//
+//  PersonView.swift
+//  ProjectFaker4
+//
+//  Created by Quentin Courrier on 9/13/24.
+//
+
+import Foundation
 import SwiftUI
 
-/*
 struct PersonListView: View {
-    @StateObject var personController = PersonController()
+    @ObservedObject var viewModel : PersonListViewModel
     
     var body: some View {
         NavigationView {
-            List(personController.people) { person in
+            List(viewModel.people) { person in
                 VStack(alignment: .leading, spacing: 10) {
                     Text("\(person.firstname) \(person.lastname)")
                         .font(.headline)
@@ -19,9 +26,11 @@ struct PersonListView: View {
                             .font(.subheadline)
                     }
                     
+                    /*
                     Text("Carte de Crédit: \(person.credit_card.cc_number)")
                         .font(.footnote)
                         .foregroundColor(.gray)
+                     */
                     
                     AsyncImage(url: URL(string: person.image)) { image in
                         image
@@ -36,7 +45,7 @@ struct PersonListView: View {
             }
             .navigationTitle("Personnes")
             .onAppear {
-                personController.fetchPeople()
+                viewModel.fetchPeople()
             }
         }
     }
@@ -44,8 +53,6 @@ struct PersonListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonListView()
+        PersonListView(viewModel: PersonListViewModel())
     }
 }
- */
-
