@@ -14,6 +14,8 @@
 		6744CE032C945DC0000BF8E8 /* ProjectFaker4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE022C945DC0000BF8E8 /* ProjectFaker4Tests.swift */; };
 		6744CE0D2C945DC0000BF8E8 /* ProjectFaker4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE0C2C945DC0000BF8E8 /* ProjectFaker4UITests.swift */; };
 		6744CE0F2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE0E2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift */; };
+		6744CE232C946366000BF8E8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE222C946366000BF8E8 /* Api.swift */; };
+		6744CE252C946670000BF8E8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE242C946670000BF8E8 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6744CE082C945DC0000BF8E8 /* ProjectFaker4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectFaker4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6744CE0C2C945DC0000BF8E8 /* ProjectFaker4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFaker4UITests.swift; sourceTree = "<group>"; };
 		6744CE0E2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFaker4UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6744CE222C946366000BF8E8 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		6744CE242C946670000BF8E8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				6744CDF12C945DBD000BF8E8 /* ProjectFaker4App.swift */,
 				6744CDF32C945DBD000BF8E8 /* ContentView.swift */,
+				6744CE222C946366000BF8E8 /* Api.swift */,
+				6744CE242C946670000BF8E8 /* Model.swift */,
 				6744CDF52C945DC0000BF8E8 /* Assets.xcassets */,
 				6744CDF72C945DC0000BF8E8 /* Preview Content */,
 			);
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6744CE232C946366000BF8E8 /* Api.swift in Sources */,
 				6744CDF42C945DBD000BF8E8 /* ContentView.swift in Sources */,
 				6744CDF22C945DBD000BF8E8 /* ProjectFaker4App.swift in Sources */,
+				6744CE252C946670000BF8E8 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
