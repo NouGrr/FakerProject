@@ -33,7 +33,7 @@ struct CreditCardListView : View {
                     Text("Chargement dses informations")
                 }
             }
-            .navigationTitle("Credit Cards")
+            .navigationTitle("Credit Cards de merde")
             .onAppear {
                 viewModel.fetchData(type: "visa")
             }
