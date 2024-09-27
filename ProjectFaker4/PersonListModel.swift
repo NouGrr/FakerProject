@@ -6,6 +6,7 @@ struct Person: Decodable {
     let lastname: String
     let address: Address
     let image: String
+    let gender: String
 }
 
 struct Address: Decodable {
@@ -32,6 +33,7 @@ struct PersonIdentifiable : Identifiable {
     let lastname: String
     let address: Address
     let image: String
+    let gender: String
 }
 
 

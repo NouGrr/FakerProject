@@ -12,6 +12,9 @@ struct MyApp: App {
     var body: some Scene {
         WindowGroup {
             PersonListView(viewModel: PersonListViewModel())
-        }
+                .tabItem {
+                    Label("Personnes", systemImage: "person.3")
+                }
     }
+}
 }

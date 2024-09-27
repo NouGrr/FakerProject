@@ -15,7 +15,7 @@ struct PersonListView: View {
         NavigationView {
             List(viewModel.people) { person in
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("\(person.firstname) \(person.lastname)")
+                    Text("\(person.firstname) \(person.lastname), \(person.gender)")
                         .font(.headline)
                     
                     VStack(alignment: .leading, spacing: 5) {
@@ -25,12 +25,12 @@ struct PersonListView: View {
                         Text("Code postal: \(person.address.zipcode)")
                             .font(.subheadline)
                     }
+                    NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel())) {
+                        Image(systemName: "arrow.right.circle")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
                     
-                    /*
-                    Text("Carte de Crédit: \(person.credit_card.cc_number)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                     */
                     
                     AsyncImage(url: URL(string: person.image)) { image in
                         image
