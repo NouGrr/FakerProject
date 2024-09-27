@@ -8,7 +8,7 @@ class PersonListViewModel: ObservableObject {
         let urlString = "https://fakerapi.it/api/v2/persons"
         AF.request(urlString)
             .validate() // Pour valider les réponses HTTP 200..<300 et les erreurs de contenu
-            .responseDecodable(of: PersonResponse.self) { response in // Notez le type [User].self ici
+            .responseDecodable(of: PersonResponse.self) { response in 
                 switch response.result {
                 case .success(let personResponse):
                     let persons = personResponse.data
