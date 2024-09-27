@@ -14,6 +14,14 @@
 		6744CE032C945DC0000BF8E8 /* ProjectFaker4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE022C945DC0000BF8E8 /* ProjectFaker4Tests.swift */; };
 		6744CE0D2C945DC0000BF8E8 /* ProjectFaker4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE0C2C945DC0000BF8E8 /* ProjectFaker4UITests.swift */; };
 		6744CE0F2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE0E2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift */; };
+		6744CE232C946366000BF8E8 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE222C946366000BF8E8 /* PersonListViewModel.swift */; };
+		6744CE252C946670000BF8E8 /* PersonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE242C946670000BF8E8 /* PersonListModel.swift */; };
+		6744CE602C947AA0000BF8E8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6744CE5F2C947AA0000BF8E8 /* Alamofire */; };
+		6744CE622C947CF9000BF8E8 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE612C947CF9000BF8E8 /* PersonListView.swift */; };
+		6744CE642C947F66000BF8E8 /* CCListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE632C947F66000BF8E8 /* CCListModel.swift */; };
+		6744CE662C947FBC000BF8E8 /* CCListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */; };
+		67676D6E2CA6B3BD00F2FFA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */; };
+		6778F6322CA696C50076D01F /* CCListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778F6312CA696C50076D01F /* CCListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,13 @@
 		6744CE082C945DC0000BF8E8 /* ProjectFaker4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectFaker4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6744CE0C2C945DC0000BF8E8 /* ProjectFaker4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFaker4UITests.swift; sourceTree = "<group>"; };
 		6744CE0E2C945DC0000BF8E8 /* ProjectFaker4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFaker4UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6744CE222C946366000BF8E8 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
+		6744CE242C946670000BF8E8 /* PersonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListModel.swift; sourceTree = "<group>"; };
+		6744CE612C947CF9000BF8E8 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
+		6744CE632C947F66000BF8E8 /* CCListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCListModel.swift; sourceTree = "<group>"; };
+		6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCListViewModel.swift; sourceTree = "<group>"; };
+		67676D6F2CA6B3BD00F2FFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6778F6312CA696C50076D01F /* CCListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6744CE602C947AA0000BF8E8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +90,7 @@
 		6744CDE52C945DBD000BF8E8 = {
 			isa = PBXGroup;
 			children = (
+				67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */,
 				6744CDF02C945DBD000BF8E8 /* ProjectFaker4 */,
 				6744CE012C945DC0000BF8E8 /* ProjectFaker4Tests */,
 				6744CE0B2C945DC0000BF8E8 /* ProjectFaker4UITests */,
@@ -96,6 +113,12 @@
 			children = (
 				6744CDF12C945DBD000BF8E8 /* ProjectFaker4App.swift */,
 				6744CDF32C945DBD000BF8E8 /* ContentView.swift */,
+				6744CE612C947CF9000BF8E8 /* PersonListView.swift */,
+				6744CE222C946366000BF8E8 /* PersonListViewModel.swift */,
+				6744CE242C946670000BF8E8 /* PersonListModel.swift */,
+				6744CE632C947F66000BF8E8 /* CCListModel.swift */,
+				6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */,
+				6778F6312CA696C50076D01F /* CCListView.swift */,
 				6744CDF52C945DC0000BF8E8 /* Assets.xcassets */,
 				6744CDF72C945DC0000BF8E8 /* Preview Content */,
 			);
@@ -143,6 +166,9 @@
 			dependencies = (
 			);
 			name = ProjectFaker4;
+			packageProductDependencies = (
+				6744CE5F2C947AA0000BF8E8 /* Alamofire */,
+			);
 			productName = ProjectFaker4;
 			productReference = 6744CDEE2C945DBD000BF8E8 /* ProjectFaker4.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +241,9 @@
 				Base,
 			);
 			mainGroup = 6744CDE52C945DBD000BF8E8;
+			packageReferences = (
+				6744CE5E2C947A9F000BF8E8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 6744CDEF2C945DBD000BF8E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67676D6E2CA6B3BD00F2FFA4 /* LaunchScreen.storyboard in Resources */,
 				6744CDF92C945DC0000BF8E8 /* Preview Assets.xcassets in Resources */,
 				6744CDF62C945DC0000BF8E8 /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6744CE662C947FBC000BF8E8 /* CCListViewModel.swift in Sources */,
+				6744CE622C947CF9000BF8E8 /* PersonListView.swift in Sources */,
+				6744CE232C946366000BF8E8 /* PersonListViewModel.swift in Sources */,
 				6744CDF42C945DBD000BF8E8 /* ContentView.swift in Sources */,
 				6744CDF22C945DBD000BF8E8 /* ProjectFaker4App.swift in Sources */,
+				6778F6322CA696C50076D01F /* CCListView.swift in Sources */,
+				6744CE252C946670000BF8E8 /* PersonListModel.swift in Sources */,
+				6744CE642C947F66000BF8E8 /* CCListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +329,17 @@
 			targetProxy = 6744CE092C945DC0000BF8E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67676D6F2CA6B3BD00F2FFA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6744CE102C945DC0000BF8E8 /* Debug */ = {
@@ -577,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6744CE5E2C947A9F000BF8E8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6744CE5F2C947AA0000BF8E8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6744CE5E2C947A9F000BF8E8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6744CDE62C945DBD000BF8E8 /* Project object */;
 }

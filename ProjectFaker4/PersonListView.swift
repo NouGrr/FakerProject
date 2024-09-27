@@ -1,27 +1,36 @@
+//
+//  PersonView.swift
+//  ProjectFaker4
+//
+//  Created by Quentin Courrier on 9/13/24.
+//
+
+import Foundation
 import SwiftUI
 
-/*
 struct PersonListView: View {
-    @StateObject var personController = PersonController()
+    @ObservedObject var viewModel : PersonListViewModel
     
     var body: some View {
         NavigationView {
-            List(personController.people) { person in
+            List(viewModel.people) { person in
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("\(person.firstname) \(person.lastname)")
+                    Text("\(person.firstname) \(person.lastname), \(person.gender)")
                         .font(.headline)
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Adresse: \(person.address.street), \(person.address.city), \(person.address.country)")
                             .font(.subheadline)
                         
-                        Text("Code postal: \(person.address.zipcode)")
+                        Text("Code postal TEST: \(person.address.zipcode)")
                             .font(.subheadline)
                     }
+                    NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel())) {
+                        Image(systemName: "arrow.right.circle")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
                     
-                    Text("Carte de Crédit: \(person.credit_card.cc_number)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
                     
                     AsyncImage(url: URL(string: person.image)) { image in
                         image
@@ -36,7 +45,7 @@ struct PersonListView: View {
             }
             .navigationTitle("Personnes")
             .onAppear {
-                personController.fetchPeople()
+                viewModel.fetchPeople()
             }
         }
     }
@@ -44,8 +53,6 @@ struct PersonListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonListView()
+        PersonListView(viewModel: PersonListViewModel())
     }
 }
- */
-

@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct ProjectFaker4App: App {
+struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            PersonListView(viewModel: PersonListViewModel())
+                .tabItem {
+                    Label("Personnes", systemImage: "person.3")
+                }
     }
+}
 }
