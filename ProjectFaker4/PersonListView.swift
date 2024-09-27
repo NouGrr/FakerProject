@@ -22,7 +22,7 @@ struct PersonListView: View {
                         Text("Adresse: \(person.address.street), \(person.address.city), \(person.address.country)")
                             .font(.subheadline)
                         
-                        Text("Code postal: \(person.address.zipcode)")
+                        Text("Code postal TEST: \(person.address.zipcode)")
                             .font(.subheadline)
                     }
                     NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel())) {
