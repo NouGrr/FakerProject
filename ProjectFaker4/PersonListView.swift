@@ -1,5 +1,5 @@
 //
-//  PersonView.swift
+//  PersonListView.swift
 //  ProjectFaker4
 //
 //  Created by Quentin Courrier on 9/13/24.
@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
+
 struct PersonListView: View {
     @ObservedObject var viewModel: PersonListViewModel
+    @StateObject private var themeManager = ThemeManager()
     @State private var isLoading = true
     @State private var searchText = ""
     
@@ -35,10 +37,10 @@ struct PersonListView: View {
                                         .font(.subheadline)
                                 }
                                 
-                                NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel())) {
+                                NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel()).environmentObject(themeManager)) {
                                     Image(systemName: "arrow.right.circle")
                                         .imageScale(.large)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.primary)
                                 }
                                 
                                 AsyncImage(url: URL(string: person.image)) { image in
@@ -54,11 +56,22 @@ struct PersonListView: View {
                         }
                     }
                     .navigationTitle("Personnes")
+                    .navigationBarItems(trailing: themeToggleButton)
                 }
             }
         }
         .onAppear {
             loadData()
+        }
+        .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
+    }
+    
+    private var themeToggleButton: some View {
+        Button(action: {
+            themeManager.isDarkMode.toggle()
+        }) {
+            Image(systemName: themeManager.isDarkMode ? "sun.max.fill" : "moon.fill")
+                .foregroundColor(.primary)
         }
     }
     
@@ -74,6 +87,7 @@ struct PersonListView: View {
         }
     }
 }
+
 
 struct SearchBar: View {
     @Binding var text: String

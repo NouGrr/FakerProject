@@ -1,3 +1,10 @@
+//
+//  PersonListModel.swift
+//  ProjectFaker4
+//
+//  Created by Quentin Courrier on 9/13/24.
+//
+
 import Foundation
 
 struct Person: Decodable {
