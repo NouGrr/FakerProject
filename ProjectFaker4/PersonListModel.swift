@@ -32,7 +32,7 @@ struct PersonResponse: Decodable {
     let data: [Person]
 }
 
-struct PersonIdentifiable : Identifiable {
+struct PersonIdentifiable: Identifiable {
     let idList: Int
     
     let id: Int

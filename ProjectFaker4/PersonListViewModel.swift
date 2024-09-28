@@ -19,10 +19,16 @@ class PersonListViewModel: ObservableObject {
                 switch response.result {
                 case .success(let personResponse):
                     let persons = personResponse.data
-                    var index : Int = 0
-                    for person in persons {
-                        self.people.append(PersonIdentifiable(idList: index, id: person.id, firstname: person.firstname, lastname: person.lastname, address: person.address, image: person.image, gender: person.gender))
-                        index += 1
+                    self.people = persons.enumerated().map { (index, person) in
+                        PersonIdentifiable(
+                            idList: index,
+                            id: person.id,
+                            firstname: person.firstname,
+                            lastname: person.lastname,
+                            address: person.address,
+                            image: person.image,
+                            gender: person.gender
+                        )
                     }
                 case .failure(let error):
                     print("Erreur : \(error)")

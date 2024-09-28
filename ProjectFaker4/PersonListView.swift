@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct PersonListView: View {
     @ObservedObject var viewModel: PersonListViewModel
     @StateObject private var themeManager = ThemeManager()
@@ -25,31 +24,48 @@ struct PersonListView: View {
                         SearchBar(text: $searchText)
                         
                         List(viewModel.filteredPeople(searchText: searchText)) { person in
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("\(person.firstname) \(person.lastname), \(person.gender)")
-                                    .font(.headline)
-                                
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text("Adresse: \(person.address.street), \(person.address.city), \(person.address.country)")
-                                        .font(.subheadline)
+                            HStack {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("\(person.firstname) \(person.lastname), \(person.gender)")
+                                        .font(.headline)
                                     
-                                    Text("Code postal: \(person.address.zipcode)")
-                                        .font(.subheadline)
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text("Adresse: \(person.address.street), \(person.address.city), \(person.address.country)")
+                                            .font(.subheadline)
+                                        
+                                        Text("Code postal: \(person.address.zipcode)")
+                                            .font(.subheadline)
+                                    }
+                                    
+                                    NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel()).environmentObject(themeManager)) {
+                                        Image(systemName: "arrow.right.circle")
+                                            .imageScale(.large)
+                                            .foregroundColor(.primary)
+                                    }
                                 }
                                 
-                                NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel()).environmentObject(themeManager)) {
-                                    Image(systemName: "arrow.right.circle")
-                                        .imageScale(.large)
-                                        .foregroundColor(.primary)
-                                }
+                                Spacer()
                                 
-                                AsyncImage(url: URL(string: person.image)) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: 100)
-                                } placeholder: {
-                                    ProgressView()
+                                AsyncImage(url: URL(string: person.image)) { phase in
+                                    switch phase {
+                                    case .empty:
+                                        ProgressView()
+                                            .frame(width: 60, height: 60)
+                                    case .success(let image):
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 60, height: 60)
+                                            .clipShape(Circle())
+                                    case .failure:
+                                        Image(systemName: "person.circle.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 60, height: 60)
+                                            .foregroundColor(.gray)
+                                    @unknown default:
+                                        EmptyView()
+                                    }
                                 }
                             }
                             .padding(.vertical, 10)
