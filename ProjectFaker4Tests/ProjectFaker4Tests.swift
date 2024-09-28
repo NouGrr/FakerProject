@@ -7,30 +7,93 @@
 
 import XCTest
 @testable import ProjectFaker4
+import SwiftUI
 
 final class ProjectFaker4Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // MARK: - PersonListViewModel Tests
+    
+    var personListViewModel: PersonListViewModel!
+    var ccListViewModel: CCListViewModel!
+    var themeManager: ThemeManager!
+    
+    override func setUp() {
+        super.setUp()
+        personListViewModel = PersonListViewModel()
+        ccListViewModel = CCListViewModel()
+        themeManager = ThemeManager()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        personListViewModel = nil
+        ccListViewModel = nil
+        themeManager = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    // MARK: - Test for fetching persons
+    func testFetchPeople_Success() {
+        let expectation = self.expectation(description: "Fetch people")
+        
+        personListViewModel.fetchPeople()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            XCTAssertFalse(self.personListViewModel.people.isEmpty, "Le tableau des personnes ne devrait pas être vide")
+            expectation.fulfill()
         }
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
 
+    // Test de filtrage des personnes
+    func testFilteredPeople_WithSearchText() {
+        let person1 = PersonIdentifiable(idList: 1, id: 1, firstname: "John", lastname: "Doe", address: Address(street: "123 Main St", city: "Paris", country: "France", zipcode: "75000"), image: "", gender: "Male")
+        let person2 = PersonIdentifiable(idList: 2, id: 2, firstname: "Jane", lastname: "Smith", address: Address(street: "456 Elm St", city: "Lyon", country: "France", zipcode: "69000"), image: "", gender: "Female")
+        
+        personListViewModel.people = [person1, person2]
+        
+        let filteredPeople = personListViewModel.filteredPeople(searchText: "Jane")
+        XCTAssertEqual(filteredPeople.count, 1, "Devrait filtrer une seule personne")
+        XCTAssertEqual(filteredPeople.first?.firstname, "Jane", "La personne filtrée devrait être Jane")
+    }
+    
+    // MARK: - CreditCardViewModel Tests
+    
+    func testFetchCreditCard_Success() {
+        let expectation = self.expectation(description: "Fetch credit card")
+        
+        ccListViewModel.fetchData(type: "visa")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            XCTAssertNotNil(self.ccListViewModel.card, "La carte de crédit ne devrait pas être nulle")
+            XCTAssertEqual(self.ccListViewModel.card?.type.lowercased(), "visa", "Le type de carte devrait être visa")
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    // MARK: - ThemeManager Tests
+    
+    func testToggleTheme() {
+        let initialDarkMode = themeManager.isDarkMode
+        themeManager.isDarkMode.toggle()
+        
+        XCTAssertNotEqual(themeManager.isDarkMode, initialDarkMode, "Le mode sombre devrait changer après bascule")
+    }
+    
+    func testPersistThemeSetting() {
+        themeManager.isDarkMode = true
+        XCTAssertTrue(UserDefaults.standard.bool(forKey: "isDarkMode"), "Le paramètre mode sombre devrait être sauvegardé dans UserDefaults")
+    }
+    
+    // MARK: - PersonListView Tests
+    
+    func testPersonListViewLoadingState() {
+        let view = PersonListView(viewModel: personListViewModel)
+        
+        // Simuler l'état de chargement
+        XCTAssertTrue(personListViewModel.people.isEmpty, "Le tableau des personnes devrait être vide au démarrage")
+    }
 }
+

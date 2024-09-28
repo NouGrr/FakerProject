@@ -20,7 +20,6 @@
 		6744CE622C947CF9000BF8E8 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE612C947CF9000BF8E8 /* PersonListView.swift */; };
 		6744CE642C947F66000BF8E8 /* CCListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE632C947F66000BF8E8 /* CCListModel.swift */; };
 		6744CE662C947FBC000BF8E8 /* CCListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */; };
-		67676D6E2CA6B3BD00F2FFA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */; };
 		67676D722CA6D4F600F2FFA4 /* CPListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67676D712CA6D4F600F2FFA4 /* CPListModel.swift */; };
 		67676D742CA6D5DE00F2FFA4 /* CPListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67676D732CA6D5DE00F2FFA4 /* CPListViewModel.swift */; };
 		67676D762CA6D94F00F2FFA4 /* CPListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67676D752CA6D94F00F2FFA4 /* CPListView.swift */; };
@@ -62,7 +61,6 @@
 		6744CE612C947CF9000BF8E8 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		6744CE632C947F66000BF8E8 /* CCListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCListModel.swift; sourceTree = "<group>"; };
 		6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCListViewModel.swift; sourceTree = "<group>"; };
-		67676D6F2CA6B3BD00F2FFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67676D712CA6D4F600F2FFA4 /* CPListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListModel.swift; sourceTree = "<group>"; };
 		67676D732CA6D5DE00F2FFA4 /* CPListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListViewModel.swift; sourceTree = "<group>"; };
 		67676D752CA6D94F00F2FFA4 /* CPListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPListView.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		6744CDE52C945DBD000BF8E8 = {
 			isa = PBXGroup;
 			children = (
-				67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */,
 				6744CDF02C945DBD000BF8E8 /* ProjectFaker4 */,
 				6744CE012C945DC0000BF8E8 /* ProjectFaker4Tests */,
 				6744CE0B2C945DC0000BF8E8 /* ProjectFaker4UITests */,
@@ -275,7 +272,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67676D6E2CA6B3BD00F2FFA4 /* LaunchScreen.storyboard in Resources */,
 				6744CDF92C945DC0000BF8E8 /* Preview Assets.xcassets in Resources */,
 				6744CDF62C945DC0000BF8E8 /* Assets.xcassets in Resources */,
 			);
@@ -349,17 +345,6 @@
 			targetProxy = 6744CE092C945DC0000BF8E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		67676D702CA6B3BD00F2FFA4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67676D6F2CA6B3BD00F2FFA4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = SOURCE_ROOT;
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6744CE102C945DC0000BF8E8 /* Debug */ = {

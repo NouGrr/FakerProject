@@ -53,6 +53,7 @@ struct CustomBackButton: View {
                 Text("Retour")
             }
             .foregroundColor(themeManager.isDarkMode ? Color.green : Color.accentColor)
+
         }
     }
 }
