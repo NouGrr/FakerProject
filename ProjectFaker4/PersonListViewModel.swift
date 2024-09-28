@@ -7,8 +7,8 @@ class PersonListViewModel: ObservableObject {
     func fetchPeople() {
         let urlString = "https://fakerapi.it/api/v2/persons"
         AF.request(urlString)
-            .validate() // Pour valider les réponses HTTP 200..<300 et les erreurs de contenu
-            .responseDecodable(of: PersonResponse.self) { response in 
+            .validate()
+            .responseDecodable(of: PersonResponse.self) { response in
                 switch response.result {
                 case .success(let personResponse):
                     let persons = personResponse.data
@@ -22,7 +22,15 @@ class PersonListViewModel: ObservableObject {
                 }
             }
     }
+    
+    func filteredPeople(searchText: String) -> [PersonIdentifiable] {
+        if searchText.isEmpty {
+            return people
+        } else {
+            return people.filter { person in
+                person.firstname.lowercased().contains(searchText.lowercased()) ||
+                person.lastname.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
 }
-
-
-
