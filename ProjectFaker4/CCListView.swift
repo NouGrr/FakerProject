@@ -32,7 +32,7 @@ struct CreditCardListView : View {
                     
                     .padding(.vertical, 10)
                 } else {
-                    Text("Chargement dses informations")
+                    Text("Chargement des informations")
                 }
                 
             }

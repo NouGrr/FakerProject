@@ -30,7 +30,7 @@ struct CPListView : View {
                     }
                     .padding(.vertical, 10)
                 } else {
-                    Text("Chargement dses informations")
+                    Text("Chargement des informations")
                 }
             }
             .navigationTitle("Entreprise")

@@ -13,7 +13,7 @@ class CPListViewModel: ObservableObject {
     @Published var comp : CP?
         
     func fetchData(type: String){
-        let urlString = "https://fakerapi.it/api/v2/companies"
+        let urlString = "https://fakerapi.it/api/v2/companies?_quantity=1"
         AF.request(urlString)
             .validate()
             .responseDecodable(of: CPResponse.self) {response in
