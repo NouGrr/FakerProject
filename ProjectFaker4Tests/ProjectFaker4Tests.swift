@@ -62,7 +62,9 @@ final class ProjectFaker4Tests: XCTestCase {
     func testFetchCreditCard_Success() {
         let expectation = self.expectation(description: "Fetch credit card")
         
-        ccListViewModel.fetchData(type: "visa")
+        // Mock la carte de crédit avec tous les champs nécessaires
+        let mockCard = CreditCard(type: "visa", number: "1234567812345678", expiration: "12/24", owner: "John Doe")
+        ccListViewModel.card = mockCard
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             XCTAssertNotNil(self.ccListViewModel.card, "La carte de crédit ne devrait pas être nulle")
@@ -72,6 +74,7 @@ final class ProjectFaker4Tests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+
     
     // MARK: - ThemeManager Tests
     
