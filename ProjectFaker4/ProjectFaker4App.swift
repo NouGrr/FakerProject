@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct MyApp: App {
+    @StateObject private var themeManager = ThemeManager() 
+
     var body: some Scene {
         WindowGroup {
             PersonListView(viewModel: PersonListViewModel())
                 .tabItem {
                     Label("Personnes", systemImage: "person.3")
                 }
+                .environmentObject(themeManager)
+        }
     }
 }
-}
+

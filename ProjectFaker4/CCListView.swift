@@ -25,11 +25,9 @@ struct CreditCardListView: View {
                     
                     Text("Expiration: \(card.expiration)")
                         .font(.subheadline)
+                    
+                    }
                 }
-                .padding(.vertical, 10)
-            } else {
-                Text("Chargement des informations")
-            }
         }
         .navigationTitle("Credit Cards")
         .onAppear {
@@ -53,7 +51,6 @@ struct CustomBackButton: View {
                 Text("Retour")
             }
             .foregroundColor(themeManager.isDarkMode ? Color.green : Color.accentColor)
-
         }
     }
 }

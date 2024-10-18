@@ -8,12 +8,18 @@
 import Foundation
 import SwiftUI
 
+enum CreditCompanyMode: String, CaseIterable {
+    case creditCards = "Voir les cartes de crédit"
+    case companies = "Voir les entreprises"
+}
+
 struct PersonListView: View {
     @ObservedObject var viewModel: PersonListViewModel
     @StateObject private var themeManager = ThemeManager()
     @State private var isLoading = true
     @State private var searchText = ""
-    
+    @State private var selectedMode: CreditCompanyMode = .creditCards
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,8 +27,16 @@ struct PersonListView: View {
                     LoadingPage()
                 } else {
                     VStack {
-                        SearchBar(text: $searchText)
+                        Picker("Sélectionnez une vue", selection: $selectedMode) {
+                            ForEach(CreditCompanyMode.allCases, id: \.self) { mode in
+                                Text(mode.rawValue).tag(mode)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding()
                         
+                        SearchBar(text: $searchText)
+
                         List(viewModel.filteredPeople(searchText: searchText)) { person in
                             HStack {
                                 VStack(alignment: .leading, spacing: 10) {
@@ -37,10 +51,18 @@ struct PersonListView: View {
                                             .font(.subheadline)
                                     }
                                     
-                                    NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel()).environmentObject(themeManager)) {
-                                        Image(systemName: "arrow.right.circle")
-                                            .imageScale(.large)
-                                            .foregroundColor(.primary)
+                                    if selectedMode == .creditCards {
+                                        NavigationLink(destination: CreditCardListView(viewModel: CCListViewModel()).environmentObject(themeManager)) {
+                                            Image(systemName: "arrow.right.circle")
+                                                .imageScale(.large)
+                                                .foregroundColor(.primary)
+                                        }
+                                    } else {
+                                        NavigationLink(destination: CPListView(viewModel: CPListViewModel()).environmentObject(themeManager)) {
+                                            Image(systemName: "arrow.right.circle")
+                                                .imageScale(.large)
+                                                .foregroundColor(.primary)
+                                        }
                                     }
                                 }
                                 
@@ -104,7 +126,6 @@ struct PersonListView: View {
     }
 }
 
-
 struct SearchBar: View {
     @Binding var text: String
 
@@ -137,3 +158,4 @@ struct SearchBar: View {
         .padding(.horizontal)
     }
 }
+
