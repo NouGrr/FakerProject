@@ -95,6 +95,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		672B79642CC28AFD00A25502 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				6744CDF32C945DBD000BF8E8 /* ContentView.swift */,
+				6744CE612C947CF9000BF8E8 /* PersonListView.swift */,
+				6778F6312CA696C50076D01F /* CCListView.swift */,
+				67676D752CA6D94F00F2FFA4 /* CPListView.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		672B79652CC28B3600A25502 /* ListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67676D732CA6D5DE00F2FFA4 /* CPListViewModel.swift */,
+				6744CE222C946366000BF8E8 /* PersonListViewModel.swift */,
+				6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */,
+			);
+			path = ListViewModel;
+			sourceTree = "<group>";
+		};
+		672B79662CC28B5700A25502 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67676D712CA6D4F600F2FFA4 /* CPListModel.swift */,
+				6744CE632C947F66000BF8E8 /* CCListModel.swift */,
+				6744CE242C946670000BF8E8 /* PersonListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6744CDE52C945DBD000BF8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -118,19 +149,12 @@
 		6744CDF02C945DBD000BF8E8 /* ProjectFaker4 */ = {
 			isa = PBXGroup;
 			children = (
+				672B79662CC28B5700A25502 /* Model */,
+				672B79652CC28B3600A25502 /* ListViewModel */,
 				6744CDF12C945DBD000BF8E8 /* ProjectFaker4App.swift */,
-				6744CDF32C945DBD000BF8E8 /* ContentView.swift */,
-				6744CE612C947CF9000BF8E8 /* PersonListView.swift */,
+				672B79642CC28AFD00A25502 /* ListView */,
 				67756E162CA7DEDE007D7D63 /* ThemeManager.swift */,
 				67676D792CA6E45C00F2FFA4 /* LoadingPage.swift */,
-				6744CE222C946366000BF8E8 /* PersonListViewModel.swift */,
-				6744CE242C946670000BF8E8 /* PersonListModel.swift */,
-				6744CE632C947F66000BF8E8 /* CCListModel.swift */,
-				67676D712CA6D4F600F2FFA4 /* CPListModel.swift */,
-				6744CE652C947FBC000BF8E8 /* CCListViewModel.swift */,
-				67676D732CA6D5DE00F2FFA4 /* CPListViewModel.swift */,
-				67676D752CA6D94F00F2FFA4 /* CPListView.swift */,
-				6778F6312CA696C50076D01F /* CCListView.swift */,
 				6744CDF52C945DC0000BF8E8 /* Assets.xcassets */,
 				6744CDF72C945DC0000BF8E8 /* Preview Content */,
 			);
